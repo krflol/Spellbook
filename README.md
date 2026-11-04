@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/spellbook.png" width="112" alt="Spellbook open-book emblem"></p>
+![Spellbook — World of Warcraft macros inside VS Code](docs/screenshots/spellbook-banner.svg)
 
 # Spellbook
 
@@ -15,6 +15,12 @@ A World of Warcraft macro IDE inside **VS Code**. Write macros with highlighting
 
 VS Code 1.96+ on desktop is required. The extension is distributed as a universal VSIX through GitHub Releases; it is not currently on the Marketplace.
 
+## Autocomplete in context
+
+![Illustrated walkthrough: build a mouseover heal with command, target, condition, and spell-name completion](docs/screenshots/autocomplete-walkthrough.gif)
+
+*Illustrated walkthrough using Spellbook's actual completion results and character counter.*
+
 ## Features
 
 - Native VS Code tabs, split editors, themes, keyboard shortcuts, multi-cursor editing, find/replace, undo/redo, and Outline.
@@ -24,6 +30,10 @@ VS Code 1.96+ on desktop is required. The extension is distributed as a universa
 - The last 100 content revisions per macro, native comparisons, and revision restoration.
 - 36 samples and snippets, including stance dancing, Bear/Cat switching, travel forms, Prowl, powershifting, caster healing, form-sensitive attacks, mouseovers, and focus.
 - `.wowmacro` / `.macro` files, Atlas and Spellbook desktop library imports, JSON/text exports, and custom autocomplete catalogues.
+
+![Included sample code for Warrior stance dancing, Druid shapeshifting, and form-sensitive attacks](docs/screenshots/macro-samples.svg)
+
+*Three of the 36 included samples. Each comes with guidance about keypress behavior, requirements, and form slots.*
 
 The extension makes no network requests, collects no telemetry, and does not execute macros or modify the game. The samples and bundled English vocabulary focus on **WoW Forever / Classic-style mechanics**. Verify spell availability and form slots on your character; samples have not been tested in a live game session. Diagnostics check structure rather than simulating gameplay or compiling Lua.
 

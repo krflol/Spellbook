@@ -1,5 +1,7 @@
 # Spellbook — WoW Macro IDE
 
+![Spellbook — World of Warcraft macros inside VS Code](https://raw.githubusercontent.com/krflol/Spellbook/main/docs/screenshots/spellbook-banner.png)
+
 Write World of Warcraft macros in VS Code, with contextual IntelliSense, syntax highlighting, inline Lua support, and a local macro library. Includes 36 practical samples for stance dancing, shapeshifting, form-sensitive actions, targeting, and modifiers.
 
 ## Install
@@ -20,6 +22,10 @@ Requires desktop VS Code 1.96 or newer. The VSIX is platform-independent and con
 - **Samples:** inspect guidance, create an editable library copy, or insert a sample into the current editor. Type `sb-` for native snippets.
 - **Files:** `.wowmacro` and `.macro` files work directly in the editor. Use **Spellbook: Save Current Macro to Library** when you want library management.
 
+![Illustrated walkthrough: build a mouseover heal with contextual autocomplete](https://raw.githubusercontent.com/krflol/Spellbook/main/docs/screenshots/autocomplete-walkthrough.gif)
+
+*Illustrated walkthrough using Spellbook's actual completion results and character counter.*
+
 Library macros and notes autosave after a one-second typing pause; Ctrl+S / Cmd+S saves immediately. Ordinary files follow VS Code's Auto Save setting. Cross-window revision checks prevent an older draft from overwriting newer library content. If a conflict occurs, the editor retains your draft; use Save As or Duplicate Macro to preserve it before reloading.
 
 Use **Spellbook: Edit Macro Details → Notes** to edit a macro's notes. Right-click a macro for organization, export, and history actions. Click a saved revision to compare it with the current macro, or use its restore action to create a new revision from it.
@@ -29,6 +35,8 @@ Use **Spellbook: Edit Macro Details → Notes** to edit a macro's notes. Right-c
 Run **Spellbook: Copy Macro for WoW**, click the editor's copy icon, or press **Ctrl+Alt+C** (**Cmd+Alt+C** on macOS). Paste into the game's macro editor. Spellbook does not execute macros or write to the game.
 
 The bundled examples and English vocabulary focus on **WoW Forever / Classic-style mechanics**. Spell availability and stance/form slots depend on your client and character. Read each sample's guidance and use **Inspect forms** to check your slots. Samples have not been tested in a live game session. Diagnostics check structure; they are not a Lua compiler or a gameplay simulator.
+
+![Included sample code for stance dancing, shapeshifting, and form-sensitive attacks](https://raw.githubusercontent.com/krflol/Spellbook/main/docs/screenshots/macro-samples.png)
 
 ## Bring your library
 
