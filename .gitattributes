@@ -1,0 +1,3 @@
+# Keep extension formatting consistent in Windows and Unix checkouts.
+extension/** text=auto eol=lf
+extension/media/*.png binary
