@@ -1,0 +1,288 @@
+# Curated English reference names. Not a live spellbook or a complete client database.
+spell|Abolish Disease
+spell|Abolish Poison
+spell|Aimed Shot
+spell|Ambush
+spell|Amplify Magic
+spell|Arcane Explosion
+spell|Arcane Intellect
+spell|Arcane Missiles
+spell|Arcane Power
+spell|Arcane Shot
+spell|Aquatic Form
+spell|Aspect of the Cheetah
+spell|Aspect of the Hawk
+spell|Aspect of the Monkey
+spell|Aspect of the Pack
+spell|Auto Shot
+spell|Banish
+spell|Barkskin
+spell|Battle Shout
+spell|Battle Stance
+spell|Bear Form
+spell|Berserker Rage
+spell|Berserker Stance
+spell|Bestial Wrath
+spell|Bite
+spell|Blessing of Freedom
+spell|Blessing of Kings
+spell|Blessing of Might
+spell|Blessing of Protection
+spell|Blessing of Sacrifice
+spell|Blessing of Salvation
+spell|Blessing of Wisdom
+spell|Blind
+spell|Blink
+spell|Blizzard
+spell|Bloodrage
+spell|Bloodthirst
+spell|Call Pet
+spell|Cat Form
+spell|Chain Heal
+spell|Chain Lightning
+spell|Challenging Roar
+spell|Challenging Shout
+spell|Charge
+spell|Cheap Shot
+spell|Claw
+spell|Cleave
+spell|Concussive Shot
+spell|Cone of Cold
+spell|Consecration
+spell|Consume Shadows
+spell|Corruption
+spell|Counterattack
+spell|Counterspell
+spell|Cower
+spell|Cure Disease
+spell|Cure Poison
+spell|Curse of Agony
+spell|Curse of Exhaustion
+spell|Curse of Recklessness
+spell|Curse of Shadow
+spell|Curse of the Elements
+spell|Curse of Tongues
+spell|Curse of Weakness
+spell|Dampen Magic
+spell|Dash
+spell|Death Coil
+spell|Death Wish
+spell|Defensive Stance
+spell|Demoralizing Roar
+spell|Demoralizing Shout
+spell|Desperate Prayer
+spell|Devour Magic
+spell|Dire Bear Form
+spell|Disarm
+spell|Disengage
+spell|Dismiss Pet
+spell|Dispel Magic
+spell|Divine Favor
+spell|Divine Intervention
+spell|Divine Protection
+spell|Divine Shield
+spell|Drain Life
+spell|Drain Mana
+spell|Drain Soul
+spell|Earth Shock
+spell|Earthbind Totem
+spell|Elemental Mastery
+spell|Enrage
+spell|Enslave Demon
+spell|Entangling Roots
+spell|Escape Artist
+spell|Evasion
+spell|Eviscerate
+spell|Execute
+spell|Exorcism
+spell|Explosive Trap
+spell|Eyes of the Beast
+spell|Fade
+spell|Faerie Fire
+spell|Faerie Fire (Feral)
+spell|Fear
+spell|Fear Ward
+spell|Feed Pet
+spell|Feign Death
+spell|Feint
+spell|Feral Charge
+spell|Fire Blast
+spell|Fire Nova Totem
+spell|Fireball
+spell|Flame Shock
+spell|Flamestrike
+spell|Flash Heal
+spell|Flash of Light
+spell|Freezing Trap
+spell|Frenzied Regeneration
+spell|Frost Armor
+spell|Frost Nova
+spell|Frost Shock
+spell|Frost Trap
+spell|Frostbolt
+spell|Garrote
+spell|Ghost Wolf
+spell|Gouge
+spell|Greater Heal
+spell|Grounding Totem
+spell|Growl
+spell|Hammer of Justice
+spell|Hammer of Wrath
+spell|Hamstring
+spell|Heal
+spell|Healing Touch
+spell|Healing Wave
+spell|Heroic Strike
+spell|Hibernate
+spell|Holy Fire
+spell|Holy Light
+spell|Holy Nova
+spell|Holy Shock
+spell|Holy Wrath
+spell|Howl of Terror
+spell|Hunter's Mark
+spell|Ice Armor
+spell|Ice Barrier
+spell|Ice Block
+spell|Immolate
+spell|Immolation Trap
+spell|Innervate
+spell|Inner Fire
+spell|Inner Focus
+spell|Intercept
+spell|Intimidating Shout
+spell|Intimidation
+spell|Judgement
+spell|Kick
+spell|Kidney Shot
+spell|Lay on Hands
+spell|Lesser Heal
+spell|Lesser Healing Wave
+spell|Levitate
+spell|Life Tap
+spell|Lightning Bolt
+spell|Lightning Shield
+spell|Magma Totem
+spell|Mana Burn
+spell|Mana Shield
+spell|Mana Spring Totem
+spell|Mark of the Wild
+spell|Maul
+spell|Mend Pet
+spell|Mind Blast
+spell|Mind Control
+spell|Mind Flay
+spell|Mind Soothe
+spell|Mocking Blow
+spell|Moonfire
+spell|Moonkin Form
+spell|Mortal Strike
+spell|Multi-Shot
+spell|Nature's Grasp
+spell|Nature's Swiftness
+spell|Overpower
+spell|Penance
+spell|Pick Pocket
+spell|Polymorph
+spell|Pounce
+spell|Power Infusion
+spell|Power Word: Fortitude
+spell|Power Word: Shield
+spell|Prayer of Healing
+spell|Presence of Mind
+spell|Prowl
+spell|Psychic Scream
+spell|Pummel
+spell|Purge
+spell|Pyroblast
+spell|Rake
+spell|Rapid Fire
+spell|Ravage
+spell|Rebirth
+spell|Recklessness
+spell|Redemption
+spell|Regrowth
+spell|Rejuvenation
+spell|Remove Curse
+spell|Remove Lesser Curse
+spell|Rend
+spell|Renew
+spell|Resurrection
+spell|Retaliation
+spell|Revenge
+spell|Revive Pet
+spell|Rip
+spell|Riposte
+spell|Rupture
+spell|Sacrifice
+spell|Sap
+spell|Scare Beast
+spell|Scorch
+spell|Seal of Command
+spell|Seal of Righteousness
+spell|Searing Pain
+spell|Searing Totem
+spell|Seduction
+spell|Serpent Sting
+spell|Shackle Undead
+spell|Shadow Bolt
+spell|Shadow Word: Pain
+spell|Shadowburn
+spell|Shadowform
+spell|Shield Bash
+spell|Shield Block
+spell|Shield Slam
+spell|Shield Wall
+spell|Shred
+spell|Silence
+spell|Sinister Strike
+spell|Siphon Life
+spell|Slice and Dice
+spell|Smite
+spell|Soul Fire
+spell|Spell Lock
+spell|Sprint
+spell|Starfire
+spell|Stealth
+spell|Stoneform
+spell|Stormstrike
+spell|Summon Felhunter
+spell|Summon Imp
+spell|Summon Succubus
+spell|Summon Voidwalker
+spell|Sunder Armor
+spell|Sweeping Strikes
+spell|Swiftmend
+spell|Swipe
+spell|Taunt
+spell|Thorns
+spell|Thunder Clap
+spell|Tiger's Fury
+spell|Tranquility
+spell|Tranquilizing Shot
+spell|Travel Form
+spell|Tremor Totem
+spell|Turn Undead
+spell|Vampiric Embrace
+spell|Vanish
+spell|Viper Sting
+spell|War Stomp
+spell|Whirlwind
+spell|Will of the Forsaken
+spell|Wing Clip
+spell|Wrath
+item|Healing Potion
+item|Mana Potion
+item|Major Healing Potion
+item|Major Mana Potion
+item|Lesser Healing Potion
+item|Lesser Mana Potion
+item|Swiftness Potion
+item|Free Action Potion
+item|Living Action Potion
+item|Limited Invulnerability Potion
+item|Restorative Potion
+item|Heavy Runecloth Bandage
+item|Runecloth Bandage
+item|Major Healthstone
+item|Healthstone

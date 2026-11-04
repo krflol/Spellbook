@@ -1,0 +1,8 @@
+{
+  "format": "spellbook-catalogue",
+  "version": 1,
+  "names": [
+    { "name": "Fireball", "kind": "spell", "id": 133 },
+    { "name": "Healing Potion", "kind": "item", "id": 929 }
+  ]
+}

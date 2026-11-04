@@ -1,0 +1,40 @@
+name: Publish Windows release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag, such as v0.1.0
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+      - name: Validate tag and install toolchain
+        shell: pwsh
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          $manifest = Get-Content Cargo.toml -Raw
+          $version = [regex]::Match($manifest, '(?m)^version = "([^"]+)"').Groups[1].Value
+          if ($env:RELEASE_TAG -ne "v$version") { throw 'Tag must match the package version' }
+          rustup toolchain install stable --profile minimal --component rustfmt,clippy
+      - run: cargo +stable fmt --all -- --check
+      - run: cargo +stable test --locked --all-targets
+      - run: cargo +stable clippy --locked --all-targets -- -D warnings
+      - name: Package
+        shell: pwsh
+        run: ./scripts/package.ps1
+      - name: Publish
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          gh release create $env:RELEASE_TAG ./dist/*.zip ./dist/SHA256SUMS.txt --verify-tag --title "Spellbook $env:RELEASE_TAG" --notes-file CHANGELOG.md
+          if ($LASTEXITCODE -ne 0) { throw 'Release publishing failed' }

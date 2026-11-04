@@ -1,0 +1,30 @@
+[package]
+name = "spellbook"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.95"
+description = "An offline desktop IDE for World of Warcraft macros"
+license = "MIT"
+repository = "https://github.com/krflol/Spellbook"
+readme = "README.md"
+default-run = "spellbook"
+
+[dependencies]
+anyhow = "1"
+clap = { version = "4", features = ["derive"] }
+rusqlite = { version = "0.38", features = ["bundled"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+eframe = { version = "0.37", default-features = false, features = ["glow", "default_fonts", "clipboard", "links", "accesskit", "x11", "wayland"] }
+image = { version = "0.25", default-features = false, features = ["png", "ico"] }
+rfd = "0.17.2"
+
+[dev-dependencies]
+tempfile = "3"
+
+[target.'cfg(windows)'.build-dependencies]
+tauri-winres = "0.3.6"
+image = { version = "0.25", default-features = false, features = ["png", "ico"] }
+
+[profile.release]
+strip = true
