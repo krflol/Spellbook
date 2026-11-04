@@ -1,0 +1,12 @@
+{
+  "brackets": [["[","]"],["(",")"],["{","}"]],
+  "autoClosingPairs": [
+    {"open":"[","close":"]","notIn":["string","comment"]},
+    {"open":"(","close":")","notIn":["string","comment"]},
+    {"open":"{","close":"}","notIn":["string","comment"]},
+    {"open":"\"","close":"\"","notIn":["string","comment"]},
+    {"open":"'","close":"'","notIn":["string","comment"]}
+  ],
+  "surroundingPairs": [["[","]"],["(",")"],["{","}"],["\"","\""],["'","'"]],
+  "wordPattern": "[!@#/]?[\\w\\u00C0-\\uFFFF]+(?:[.:][\\w\\u00C0-\\uFFFF]*)?"
+}

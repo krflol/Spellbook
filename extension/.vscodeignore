@@ -1,0 +1,12 @@
+src/**
+scripts/**
+node_modules/**
+.vscode/**
+.test-host/**
+.vscode-test/**
+out/test/**
+out/**/*.map
+tsconfig.json
+package-lock.json
+*.log
+.prettierrc.json

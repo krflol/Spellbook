@@ -1,0 +1,2467 @@
+{
+  "commands": [
+    {
+      "name": "#showtooltip",
+      "description": "Choose the action button's tooltip and icon. With no argument, infer them from the macro.",
+      "example": "#showtooltip [mod:shift] Frostbolt; Fireball"
+    },
+    {
+      "name": "#show",
+      "description": "Choose the action button's icon and count.",
+      "example": "#show Healing Potion"
+    },
+    {
+      "name": "/cast",
+      "description": "Cast a spell. Conditional groups are checked from left to right.",
+      "example": "/cast [@mouseover,help,nodead][] Flash Heal"
+    },
+    {
+      "name": "/use",
+      "description": "Use an item by name, item ID, equipment slot, or bag and slot; also accepts spells.",
+      "example": "/use [combat] 13"
+    },
+    {
+      "name": "/castsequence",
+      "description": "Advance a sequence on successful casts. Each press attempts one action. reset= is optional.",
+      "example": "/castsequence reset=target/10 Corruption, Curse of Agony"
+    },
+    {
+      "name": "/castrandom",
+      "description": "Choose an action from a comma-separated list.",
+      "example": "/castrandom Fireball, Frostbolt"
+    },
+    {
+      "name": "/userandom",
+      "description": "Choose an item from a comma-separated list.",
+      "example": "/userandom Healing Potion, Lesser Healing Potion"
+    },
+    {
+      "name": "/stopcasting",
+      "description": "Stop the current cast before processing subsequent macro lines.",
+      "example": "/stopcasting"
+    },
+    {
+      "name": "/stopmacro",
+      "description": "Stop processing the macro when the conditions match.",
+      "example": "/stopmacro [noexists][dead]"
+    },
+    {
+      "name": "/cancelaura",
+      "description": "Remove a named cancellable buff.",
+      "example": "/cancelaura Ice Block"
+    },
+    {
+      "name": "/cancelform",
+      "description": "Leave the current shapeshift form.",
+      "example": "/cancelform [form]"
+    },
+    {
+      "name": "/startattack",
+      "description": "Start auto-attacking the target.",
+      "example": "/startattack [harm,nodead]"
+    },
+    {
+      "name": "/stopattack",
+      "description": "Stop auto-attacking.",
+      "example": "/stopattack"
+    },
+    {
+      "name": "/target",
+      "description": "Select a unit by name or unit token.",
+      "example": "/target [@mouseover,exists]"
+    },
+    {
+      "name": "/tar",
+      "description": "Short form of /target.",
+      "example": "/tar Hogger"
+    },
+    {
+      "name": "/targetexact",
+      "description": "Select a unit whose name matches exactly.",
+      "example": "/targetexact Hogger"
+    },
+    {
+      "name": "/targetenemy",
+      "description": "Cycle to an enemy target.",
+      "example": "/targetenemy [noharm][dead]"
+    },
+    {
+      "name": "/targetfriend",
+      "description": "Cycle to a friendly target.",
+      "example": "/targetfriend"
+    },
+    {
+      "name": "/targetlasttarget",
+      "description": "Return to the previous target.",
+      "example": "/targetlasttarget"
+    },
+    {
+      "name": "/targetlastenemy",
+      "description": "Return to the previous enemy target.",
+      "example": "/targetlastenemy"
+    },
+    {
+      "name": "/targetlastfriend",
+      "description": "Return to the previous friendly target.",
+      "example": "/targetlastfriend"
+    },
+    {
+      "name": "/cleartarget",
+      "description": "Clear the current target.",
+      "example": "/cleartarget [dead]"
+    },
+    {
+      "name": "/focus",
+      "description": "Set the focus unit.",
+      "example": "/focus [@mouseover,exists][]"
+    },
+    {
+      "name": "/clearfocus",
+      "description": "Clear the focus unit.",
+      "example": "/clearfocus [@focus,dead]"
+    },
+    {
+      "name": "/assist",
+      "description": "Select another unit's target.",
+      "example": "/assist [@focus,exists]"
+    },
+    {
+      "name": "/petattack",
+      "description": "Send your pet to attack.",
+      "example": "/petattack [@target,harm,nodead]"
+    },
+    {
+      "name": "/petfollow",
+      "description": "Call your pet back to follow.",
+      "example": "/petfollow"
+    },
+    {
+      "name": "/petstay",
+      "description": "Tell your pet to stay.",
+      "example": "/petstay"
+    },
+    {
+      "name": "/petpassive",
+      "description": "Set your pet to passive.",
+      "example": "/petpassive"
+    },
+    {
+      "name": "/petdefensive",
+      "description": "Set your pet to defensive.",
+      "example": "/petdefensive"
+    },
+    {
+      "name": "/petautocaston",
+      "description": "Enable autocast for a named pet ability.",
+      "example": "/petautocaston Growl"
+    },
+    {
+      "name": "/petautocastoff",
+      "description": "Disable autocast for a named pet ability.",
+      "example": "/petautocastoff Growl"
+    },
+    {
+      "name": "/petautocasttoggle",
+      "description": "Toggle autocast for a named pet ability.",
+      "example": "/petautocasttoggle Growl"
+    },
+    {
+      "name": "/equip",
+      "description": "Equip an item by name.",
+      "example": "/equip Worn Shortsword"
+    },
+    {
+      "name": "/equipslot",
+      "description": "Equip an item into a numbered equipment slot.",
+      "example": "/equipslot 16 Worn Shortsword"
+    },
+    {
+      "name": "/equipset",
+      "description": "Equip a saved equipment set if supported by the client.",
+      "example": "/equipset Tank"
+    },
+    {
+      "name": "/dismount",
+      "description": "Dismount when the conditions match.",
+      "example": "/dismount [mounted]"
+    },
+    {
+      "name": "/leavevehicle",
+      "description": "Leave the current vehicle.",
+      "example": "/leavevehicle"
+    },
+    {
+      "name": "/changeactionbar",
+      "description": "Switch to a numbered action bar page.",
+      "example": "/changeactionbar 2"
+    },
+    {
+      "name": "/swapactionbar",
+      "description": "Swap between two action bar pages.",
+      "example": "/swapactionbar 1 2"
+    },
+    {
+      "name": "/click",
+      "description": "Click a named UI button, subject to the client's protected-action restrictions.",
+      "example": "/click CharacterMicroButton"
+    },
+    {
+      "name": "/run",
+      "description": "One line of Lua. Syntax is highlighted; Spellbook does not execute or fully type-check Lua.",
+      "example": "/run print(UnitName(\"player\"))"
+    },
+    {
+      "name": "/script",
+      "description": "Alias of /run.",
+      "example": "/script print(GetTime())"
+    },
+    {
+      "name": "/console",
+      "description": "Set a console variable.",
+      "example": "/console Sound_EnableMusic 0"
+    },
+    {
+      "name": "/say",
+      "description": "Send text to nearby players. %t expands to your target's name.",
+      "example": "/say Hello, %t!"
+    },
+    {
+      "name": "/s",
+      "description": "Short form of /say.",
+      "example": "/s Hello!"
+    },
+    {
+      "name": "/party",
+      "description": "Send text to your party.",
+      "example": "/party Ready!"
+    },
+    {
+      "name": "/p",
+      "description": "Short form of /party.",
+      "example": "/p Ready!"
+    },
+    {
+      "name": "/raid",
+      "description": "Send text to your raid.",
+      "example": "/raid Ready!"
+    },
+    {
+      "name": "/rw",
+      "description": "Send a raid warning when permitted.",
+      "example": "/rw Move away!"
+    },
+    {
+      "name": "/yell",
+      "description": "Yell text to nearby players.",
+      "example": "/yell For the Alliance!"
+    },
+    {
+      "name": "/emote",
+      "description": "Send a custom emote.",
+      "example": "/emote waves at %t."
+    },
+    {
+      "name": "/whisper",
+      "description": "Whisper a named player.",
+      "example": "/whisper Player Hello!"
+    },
+    {
+      "name": "/w",
+      "description": "Short form of /whisper.",
+      "example": "/w Player Hello!"
+    },
+    {
+      "name": "/guild",
+      "description": "Send text to your guild.",
+      "example": "/guild Hello!"
+    },
+    {
+      "name": "/g",
+      "description": "Short form of /guild.",
+      "example": "/g Hello!"
+    },
+    {
+      "name": "/reload",
+      "description": "Reload the game's interface.",
+      "example": "/reload"
+    },
+    {
+      "name": "/readycheck",
+      "description": "Start a group ready check when permitted.",
+      "example": "/readycheck"
+    },
+    {
+      "name": "/clearworldmarker",
+      "description": "Clear a numbered world marker when supported.",
+      "example": "/clearworldmarker 1"
+    },
+    {
+      "name": "/wm",
+      "description": "Place a numbered world marker when supported.",
+      "example": "/wm 1"
+    }
+  ],
+  "conditions": [
+    {
+      "name": "help",
+      "description": "The selected unit is friendly.",
+      "example": "[help,nodead]"
+    },
+    {
+      "name": "harm",
+      "description": "The selected unit is hostile.",
+      "example": "[harm,nodead]"
+    },
+    {
+      "name": "exists",
+      "description": "The selected unit exists.",
+      "example": "[@focus,exists]"
+    },
+    {
+      "name": "dead",
+      "description": "The selected unit is dead.",
+      "example": "[dead]"
+    },
+    {
+      "name": "nodead",
+      "description": "The selected unit is alive.",
+      "example": "[help,nodead]"
+    },
+    {
+      "name": "noexists",
+      "description": "The selected unit does not exist.",
+      "example": "[@focus,noexists]"
+    },
+    {
+      "name": "combat",
+      "description": "You are in combat.",
+      "example": "[combat]"
+    },
+    {
+      "name": "nocombat",
+      "description": "You are out of combat.",
+      "example": "[nocombat]"
+    },
+    {
+      "name": "mod",
+      "description": "A modifier key is held; optionally specify shift, ctrl, or alt.",
+      "example": "[mod:shift]"
+    },
+    {
+      "name": "nomod",
+      "description": "No modifier key is held; optionally specify which modifier.",
+      "example": "[nomod]"
+    },
+    {
+      "name": "modifier",
+      "description": "Long form of mod.",
+      "example": "[modifier:ctrl]"
+    },
+    {
+      "name": "btn",
+      "description": "The macro was clicked with this mouse button number.",
+      "example": "[btn:2]"
+    },
+    {
+      "name": "button",
+      "description": "Long form of btn.",
+      "example": "[button:2]"
+    },
+    {
+      "name": "stance",
+      "description": "You are in a numbered stance; 0 means no stance/form.",
+      "example": "[stance:1/2]"
+    },
+    {
+      "name": "form",
+      "description": "Alias of stance; numbering depends on your class and available forms.",
+      "example": "[form:1]"
+    },
+    {
+      "name": "stealth",
+      "description": "You are stealthed.",
+      "example": "[stealth]"
+    },
+    {
+      "name": "nostealth",
+      "description": "You are not stealthed.",
+      "example": "[nostealth]"
+    },
+    {
+      "name": "mounted",
+      "description": "You are mounted.",
+      "example": "[mounted]"
+    },
+    {
+      "name": "nomounted",
+      "description": "You are not mounted.",
+      "example": "[nomounted]"
+    },
+    {
+      "name": "swimming",
+      "description": "You are swimming.",
+      "example": "[swimming]"
+    },
+    {
+      "name": "flying",
+      "description": "You are flying, where supported.",
+      "example": "[flying]"
+    },
+    {
+      "name": "flyable",
+      "description": "The area permits flying, where supported.",
+      "example": "[flyable]"
+    },
+    {
+      "name": "indoors",
+      "description": "You are indoors.",
+      "example": "[indoors]"
+    },
+    {
+      "name": "outdoors",
+      "description": "You are outdoors.",
+      "example": "[outdoors]"
+    },
+    {
+      "name": "group",
+      "description": "You are in a group, optionally party or raid.",
+      "example": "[group:party]"
+    },
+    {
+      "name": "party",
+      "description": "The selected unit belongs to your party.",
+      "example": "[party]"
+    },
+    {
+      "name": "raid",
+      "description": "The selected unit belongs to your raid.",
+      "example": "[raid]"
+    },
+    {
+      "name": "pet",
+      "description": "You have a pet; optionally specify a name or family.",
+      "example": "[pet]"
+    },
+    {
+      "name": "nopet",
+      "description": "You have no active pet.",
+      "example": "[nopet]"
+    },
+    {
+      "name": "channeling",
+      "description": "You are channeling, optionally a named spell.",
+      "example": "[nochanneling]"
+    },
+    {
+      "name": "nochanneling",
+      "description": "You are not channeling, optionally a named spell.",
+      "example": "[nochanneling]"
+    },
+    {
+      "name": "equipped",
+      "description": "You have an item or item type equipped.",
+      "example": "[equipped:Shields]"
+    },
+    {
+      "name": "worn",
+      "description": "Alias of equipped.",
+      "example": "[worn:Shields]"
+    },
+    {
+      "name": "actionbar",
+      "description": "A numbered action bar is active.",
+      "example": "[actionbar:1]"
+    },
+    {
+      "name": "spec",
+      "description": "Your specialization index, when supported by the client.",
+      "example": "[spec:1]"
+    },
+    {
+      "name": "known",
+      "description": "You know the spell ID or name, when supported by the client.",
+      "example": "[known:133]"
+    },
+    {
+      "name": "talent",
+      "description": "A talent row/column is selected, when supported by the client.",
+      "example": "[talent:1/2]"
+    },
+    {
+      "name": "vehicleui",
+      "description": "The vehicle interface is active.",
+      "example": "[vehicleui]"
+    },
+    {
+      "name": "possessbar",
+      "description": "A possession bar is active.",
+      "example": "[possessbar]"
+    },
+    {
+      "name": "overridebar",
+      "description": "An override action bar is active.",
+      "example": "[overridebar]"
+    },
+    {
+      "name": "bonusbar",
+      "description": "A numbered bonus action bar is active.",
+      "example": "[bonusbar:1]"
+    },
+    {
+      "name": "unithasvehicleui",
+      "description": "The selected unit has a vehicle UI.",
+      "example": "[unithasvehicleui]"
+    },
+    {
+      "name": "canexitvehicle",
+      "description": "You can exit the current vehicle.",
+      "example": "[canexitvehicle]"
+    }
+  ],
+  "targets": [
+    {
+      "name": "@mouseover",
+      "description": "Use the unit under your cursor without changing your target.",
+      "example": "[@mouseover,help,nodead]"
+    },
+    {
+      "name": "@target",
+      "description": "Use your current target.",
+      "example": "[@target,harm,nodead]"
+    },
+    {
+      "name": "@player",
+      "description": "Use yourself as the target.",
+      "example": "[@player]"
+    },
+    {
+      "name": "@focus",
+      "description": "Use your focus unit.",
+      "example": "[@focus,harm,nodead]"
+    },
+    {
+      "name": "@targettarget",
+      "description": "Use your target's target.",
+      "example": "[@targettarget,help]"
+    },
+    {
+      "name": "@focustarget",
+      "description": "Use your focus's target.",
+      "example": "[@focustarget,harm]"
+    },
+    {
+      "name": "@pet",
+      "description": "Use your pet.",
+      "example": "[@pet,exists]"
+    },
+    {
+      "name": "@pettarget",
+      "description": "Use your pet's target.",
+      "example": "[@pettarget,harm]"
+    },
+    {
+      "name": "@cursor",
+      "description": "Place a supported ground-targeted action at the cursor.",
+      "example": "[@cursor]"
+    },
+    {
+      "name": "@party1",
+      "description": "Use the first other party member. Also party2 through party4.",
+      "example": "[@party1,help,nodead]"
+    },
+    {
+      "name": "@party2",
+      "description": "Use the second other party member.",
+      "example": "[@party2,help,nodead]"
+    },
+    {
+      "name": "@party3",
+      "description": "Use the third other party member.",
+      "example": "[@party3,help,nodead]"
+    },
+    {
+      "name": "@party4",
+      "description": "Use the fourth other party member.",
+      "example": "[@party4,help,nodead]"
+    },
+    {
+      "name": "@raid1",
+      "description": "Use raid member 1. Other raid indices may be used.",
+      "example": "[@raid1,help,nodead]"
+    }
+  ],
+  "lua": [
+    {
+      "name": "print",
+      "description": "print(...) — print values to your chat frame.",
+      "example": "print(UnitName(\"player\"))"
+    },
+    {
+      "name": "UnitName",
+      "description": "UnitName(unit) — return a unit's name.",
+      "example": "UnitName(\"player\")"
+    },
+    {
+      "name": "UnitClass",
+      "description": "UnitClass(unit) — return a unit's class names and ID.",
+      "example": "UnitClass(\"player\")"
+    },
+    {
+      "name": "UnitLevel",
+      "description": "UnitLevel(unit) — return a unit's level.",
+      "example": "UnitLevel(\"player\")"
+    },
+    {
+      "name": "UnitExists",
+      "description": "UnitExists(unit) — test whether a unit exists.",
+      "example": "UnitExists(\"target\")"
+    },
+    {
+      "name": "UnitGUID",
+      "description": "UnitGUID(unit) — return a unit's GUID.",
+      "example": "UnitGUID(\"target\")"
+    },
+    {
+      "name": "GetTime",
+      "description": "GetTime() — return elapsed client time in seconds.",
+      "example": "GetTime()"
+    },
+    {
+      "name": "GetNumShapeshiftForms",
+      "description": "GetNumShapeshiftForms() — count your learned stance/form slots.",
+      "example": "GetNumShapeshiftForms()"
+    },
+    {
+      "name": "GetShapeshiftFormInfo",
+      "description": "GetShapeshiftFormInfo(index) — return icon, active, castable, and spell ID for a stance/form slot.",
+      "example": "GetShapeshiftFormInfo(1)"
+    },
+    {
+      "name": "C_Spell.GetSpellName",
+      "description": "C_Spell.GetSpellName(spellID) — look up the name of a client spell; may return nil.",
+      "example": "C_Spell.GetSpellName(768)"
+    },
+    {
+      "name": "GetMoney",
+      "description": "GetMoney() — return your money in copper.",
+      "example": "GetMoney()"
+    },
+    {
+      "name": "GetCVar",
+      "description": "GetCVar(name) — read a console variable.",
+      "example": "GetCVar(\"Sound_EnableMusic\")"
+    },
+    {
+      "name": "SetCVar",
+      "description": "SetCVar(name, value) — set a console variable.",
+      "example": "SetCVar(\"Sound_EnableMusic\", 0)"
+    },
+    {
+      "name": "IsInGroup",
+      "description": "IsInGroup() — test group membership.",
+      "example": "IsInGroup()"
+    },
+    {
+      "name": "IsInRaid",
+      "description": "IsInRaid() — test raid membership.",
+      "example": "IsInRaid()"
+    },
+    {
+      "name": "GetNumGroupMembers",
+      "description": "GetNumGroupMembers() — return group size.",
+      "example": "GetNumGroupMembers()"
+    },
+    {
+      "name": "SendChatMessage",
+      "description": "SendChatMessage(text, type, language, target) — send chat, subject to client restrictions.",
+      "example": "SendChatMessage(\"Hello\", \"PARTY\")"
+    },
+    {
+      "name": "PlaySound",
+      "description": "PlaySound(soundKitID) — play a sound kit.",
+      "example": "PlaySound(12867)"
+    },
+    {
+      "name": "C_Map.GetBestMapForUnit",
+      "description": "C_Map.GetBestMapForUnit(unit) — return the best map ID for a unit.",
+      "example": "C_Map.GetBestMapForUnit(\"player\")"
+    },
+    {
+      "name": "string.format",
+      "description": "string.format(format, ...) — format a string.",
+      "example": "string.format(\"%s\", UnitName(\"player\"))"
+    },
+    {
+      "name": "string.find",
+      "description": "string.find(text, pattern) — find a Lua pattern.",
+      "example": "string.find(\"hello\", \"ell\")"
+    },
+    {
+      "name": "string.len",
+      "description": "string.len(text) — count bytes in a string.",
+      "example": "string.len(\"hello\")"
+    },
+    {
+      "name": "table.concat",
+      "description": "table.concat(values, separator) — join a list.",
+      "example": "table.concat({1, 2}, \", \")"
+    },
+    {
+      "name": "tostring",
+      "description": "tostring(value) — convert a value to text.",
+      "example": "tostring(42)"
+    },
+    {
+      "name": "tonumber",
+      "description": "tonumber(value) — convert text to a number.",
+      "example": "tonumber(\"42\")"
+    },
+    {
+      "name": "pairs",
+      "description": "pairs(table) — iterate a table.",
+      "example": "for k,v in pairs(t) do print(k,v) end"
+    },
+    {
+      "name": "ipairs",
+      "description": "ipairs(table) — iterate an array.",
+      "example": "for i,v in ipairs(t) do print(i,v) end"
+    },
+    {
+      "name": "local",
+      "description": "Declare a local variable.",
+      "example": "local name = UnitName(\"player\")"
+    },
+    {
+      "name": "if",
+      "description": "Conditional statement.",
+      "example": "if UnitExists(\"target\") then print(UnitName(\"target\")) end"
+    }
+  ],
+  "samples": [
+    {
+      "name": "Mouseover heal",
+      "class": "Priest",
+      "category": "Essentials",
+      "description": "Try a living friendly mouseover, then the default target. Replace the spell for your class.",
+      "body": "#showtooltip\n/cast [@mouseover,help,nodead][] Flash Heal",
+      "notes": "Try a living friendly mouseover, then the default target. Replace the spell for your class."
+    },
+    {
+      "name": "Focus interrupt",
+      "class": "Mage",
+      "category": "Essentials",
+      "description": "Interrupt a living hostile focus, with your current target as fallback.",
+      "body": "#showtooltip Counterspell\n/stopcasting\n/cast [@focus,harm,nodead][] Counterspell",
+      "notes": "Interrupt a living hostile focus, with your current target as fallback."
+    },
+    {
+      "name": "Modifier cast",
+      "class": "Mage",
+      "category": "Essentials",
+      "description": "Hold Shift for Frostbolt; otherwise cast Fireball.",
+      "body": "#showtooltip\n/cast [mod:shift] Frostbolt; Fireball",
+      "notes": "Hold Shift for Frostbolt; otherwise cast Fireball."
+    },
+    {
+      "name": "Mouseover debuff",
+      "class": "Mage",
+      "category": "Essentials",
+      "description": "Use a living hostile mouseover, then your default target.",
+      "body": "#showtooltip\n/cast [@mouseover,harm,nodead][] Polymorph",
+      "notes": "Use a living hostile mouseover, then your default target."
+    },
+    {
+      "name": "Self cast",
+      "class": "Priest",
+      "category": "Essentials",
+      "description": "Cast directly on yourself.",
+      "body": "#showtooltip\n/cast [@player] Power Word: Shield",
+      "notes": "Cast directly on yourself."
+    },
+    {
+      "name": "Ground target",
+      "class": "Mage",
+      "category": "Essentials",
+      "description": "Place a supported ground-targeted spell at the cursor.",
+      "body": "#showtooltip\n/cast [@cursor] Blizzard",
+      "notes": "Place a supported ground-targeted spell at the cursor."
+    },
+    {
+      "name": "Target sequence",
+      "class": "Warlock",
+      "category": "Essentials",
+      "description": "Advance on each successful press; reset on target change or after the idle interval.",
+      "body": "#showtooltip\n/castsequence reset=target/10 Corruption, Curse of Agony",
+      "notes": "Advance on each successful press; reset on target change or after the idle interval."
+    },
+    {
+      "name": "Trinkets",
+      "class": "Any class",
+      "category": "Essentials",
+      "description": "Attempt to activate both equipped trinkets; shared cooldowns still apply.",
+      "body": "#showtooltip\n/use 13\n/use 14",
+      "notes": "Attempt to activate both equipped trinkets; shared cooldowns still apply."
+    },
+    {
+      "name": "Pet attack",
+      "class": "Any class",
+      "category": "Essentials",
+      "description": "Send your pet to your living hostile target.",
+      "body": "/petattack [@target,harm,nodead]",
+      "notes": "Send your pet to your living hostile target."
+    },
+    {
+      "name": "Mouseover focus",
+      "class": "Any class",
+      "category": "Essentials",
+      "description": "Set focus from mouseover, falling back to the current target.",
+      "body": "/focus [@mouseover,exists][]",
+      "notes": "Set focus from mouseover, falling back to the current target."
+    },
+    {
+      "name": "Stance selector",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "No modifier: Battle Stance. Shift: Defensive Stance. Ctrl: Berserker Stance. Ctrl takes priority if both keys are held. Put the macro on a key available in every stance.",
+      "body": "#showtooltip\n/cast [mod:ctrl] Berserker Stance; [mod:shift] Defensive Stance; Battle Stance",
+      "notes": "No modifier: Battle Stance. Shift: Defensive Stance. Ctrl: Berserker Stance. Ctrl takes priority if both keys are held. Put the macro on a key available in every stance.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Charge dance",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "If needed, the first press selects Battle Stance; a later press attempts Charge. This does not bypass Charge's range, combat, or cooldown requirements.",
+      "body": "#showtooltip Charge\n/cast [nostance:1] Battle Stance; Charge",
+      "notes": "If needed, the first press selects Battle Stance; a later press attempts Charge. This does not bypass Charge's range, combat, or cooldown requirements.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Overpower dance",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "Select Battle Stance when needed, then press again for Overpower. The macro does not check whether Overpower is available or whether you have enough rage.",
+      "body": "#showtooltip Overpower\n/cast [nostance:1] Battle Stance; Overpower",
+      "notes": "Select Battle Stance when needed, then press again for Overpower. The macro does not check whether Overpower is available or whether you have enough rage.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Taunt dance",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "Select Defensive Stance when needed. Once there, taunt a living hostile mouseover or your current target. A stance change and the taunt use separate presses.",
+      "body": "#showtooltip Taunt\n/cast [nostance:2] Defensive Stance; [@mouseover,harm,nodead][] Taunt",
+      "notes": "Select Defensive Stance when needed. Once there, taunt a living hostile mouseover or your current target. A stance change and the taunt use separate presses.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Pummel dance",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "Select Berserker Stance when needed, then press again to Pummel a living hostile focus or your current target. Requires Pummel and enough rage.",
+      "body": "#showtooltip Pummel\n/cast [nostance:3] Berserker Stance; [@focus,harm,nodead][] Pummel",
+      "notes": "Select Berserker Stance when needed, then press again to Pummel a living hostile focus or your current target. Requires Pummel and enough rage.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Charge/Intercept",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "Out of combat, choose Battle Stance then Charge. In combat, choose Berserker Stance then Intercept. Each press chooses one action; it does not pick based on range or cooldown. Requires both abilities.",
+      "body": "#showtooltip [combat] Intercept; Charge\n/cast [nocombat,nostance:1] Battle Stance; [combat,nostance:3] Berserker Stance; [nocombat] Charge; Intercept",
+      "notes": "Out of combat, choose Battle Stance then Charge. In combat, choose Berserker Stance then Intercept. Each press chooses one action; it does not pick based on range or cooldown. Requires both abilities.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Berserker Rage",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "Select Berserker Stance when needed; press again for Berserker Rage. Remains in Berserker Stance afterward, so returning to another stance is your choice.",
+      "body": "#showtooltip Berserker Rage\n/cast [nostance:3] Berserker Stance; Berserker Rage",
+      "notes": "Select Berserker Stance when needed; press again for Berserker Rage. Remains in Berserker Stance afterward, so returning to another stance is your choice.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Stance interrupt",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "Use Pummel in Berserker Stance, or Shield Bash in Battle/Defensive with a shield equipped. This sample preserves your stance and does not equip a shield for you.",
+      "body": "#showtooltip\n/cast [stance:3] Pummel; [stance:1/2,equipped:Shields] Shield Bash",
+      "notes": "Use Pummel in Berserker Stance, or Shield Bash in Battle/Defensive with a shield equipped. This sample preserves your stance and does not equip a shield for you.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Stance cooldown",
+      "class": "Warrior",
+      "category": "Stance dancing",
+      "description": "Use Retaliation in Battle, Shield Wall in Defensive, or Recklessness in Berserker. Preserves your stance; you must know the selected ability and meet its equipment/cooldown requirements.",
+      "body": "#showtooltip\n/cast [stance:1] Retaliation; [stance:2] Shield Wall; [stance:3] Recklessness",
+      "notes": "Use Retaliation in Battle, Shield Wall in Defensive, or Recklessness in Berserker. Preserves your stance; you must know the selected ability and meet its equipment/cooldown requirements.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+    },
+    {
+      "name": "Cat form",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Enter Cat Form without toggling it off on repeated presses. The ! prefix prevents toggling off; it does not perform a powershift.",
+      "body": "#showtooltip Cat Form\n/cast !Cat Form",
+      "notes": "Enter Cat Form without toggling it off on repeated presses. The ! prefix prevents toggling off; it does not perform a powershift.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Bear form",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Enter Bear Form without toggling it off on repeated presses. Replace Bear Form with Dire Bear Form in both lines if that is the version you use.",
+      "body": "#showtooltip Bear Form\n/cast !Bear Form",
+      "notes": "Enter Bear Form without toggling it off on repeated presses. Replace Bear Form with Dire Bear Form in both lines if that is the version you use.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Travel forms",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Swimming selects Aquatic Form before the outdoor check; otherwise outdoors selects Travel Form and indoors selects Cat Form. Learn each selected form first. The ! prefix prevents toggling it off.",
+      "body": "#showtooltip\n/cast [swimming] !Aquatic Form; [outdoors] !Travel Form; !Cat Form",
+      "notes": "Swimming selects Aquatic Form before the outdoor check; otherwise outdoors selects Travel Form and indoors selects Cat Form. Learn each selected form first. The ! prefix prevents toggling it off.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Bear/Cat switch",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "From Bear (slot 1), select Cat; from other states, select Bear. Replace Bear Form with Dire Bear Form if appropriate. Check the Bear slot with Inspect forms.",
+      "body": "#showtooltip\n/cast [form:1] !Cat Form; !Bear Form",
+      "notes": "From Bear (slot 1), select Cat; from other states, select Bear. Replace Bear Form with Dire Bear Form if appropriate. Check the Bear slot with Inspect forms.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Cat Prowl",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Select Cat Form if needed, then press again to Prowl while out of combat and not already stealthed. Repeated presses keep Prowl active. Assumes Cat is slot 3.",
+      "body": "#showtooltip Prowl\n/cast [noform:3] !Cat Form; [nocombat,nostealth] !Prowl",
+      "notes": "Select Cat Form if needed, then press again to Prowl while out of combat and not already stealthed. Repeated presses keep Prowl active. Assumes Cat is slot 3.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Cat Dash",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Select Cat Form if needed; a later press attempts Dash. Assumes Cat is slot 3. Shifting and Dash still respect their own costs and cooldowns.",
+      "body": "#showtooltip Dash\n/cast [noform:3] !Cat Form; Dash",
+      "notes": "Select Cat Form if needed; a later press attempts Dash. Assumes Cat is slot 3. Shifting and Dash still respect their own costs and cooldowns.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Cat powershift",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Deliberately leave your current form, then attempt Cat Form. A cooldown or insufficient mana can leave you in caster form; this macro cannot test those conditions before canceling. It always returns to Cat, not the previous form.",
+      "body": "#showtooltip Cat Form\n/cancelform [form]\n/cast Cat Form",
+      "notes": "Deliberately leave your current form, then attempt Cat Form. A cooldown or insufficient mana can leave you in caster form; this macro cannot test those conditions before canceling. It always returns to Cat, not the previous form.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Caster heal",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Leave form, then cast Rejuvenation on a living friendly mouseover, a living friendly target, or yourself. Stays in caster form afterward. The heal still needs mana and an available global cooldown.",
+      "body": "#showtooltip Rejuvenation\n/cancelform [form]\n/cast [@mouseover,help,nodead][help,nodead][@player] Rejuvenation",
+      "notes": "Leave form, then cast Rejuvenation on a living friendly mouseover, a living friendly target, or yourself. Stays in caster form afterward. The heal still needs mana and an available global cooldown.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Form attack",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Bear (slot 1): Maul. Cat (slot 3): Claw. Caster (no form): Wrath. Other forms do nothing. Maul queues a melee swing; the macro does not change your form or choose a rotation.",
+      "body": "#showtooltip\n/cast [form:1] Maul; [form:3] Claw; [noform] Wrath",
+      "notes": "Bear (slot 1): Maul. Cat (slot 3): Claw. Caster (no form): Wrath. Other forms do nothing. Maul queues a melee swing; the macro does not change your form or choose a rotation.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Moonkin form",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "Enter Moonkin Form without toggling it off on repeated presses. Requires the talent/form to be learned; no numbered form slot is needed.",
+      "body": "#showtooltip Moonkin Form\n/cast !Moonkin Form",
+      "notes": "Enter Moonkin Form without toggling it off on repeated presses. Requires the talent/form to be learned; no numbered form slot is needed.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Cat/caster key",
+      "class": "Druid",
+      "category": "Druid forms",
+      "description": "No Shift: enter Cat Form and stay there. Hold Shift: leave your current form and stop the macro, so it cannot immediately re-enter Cat. This sample does not depend on form-slot numbering.",
+      "body": "#showtooltip Cat Form\n/cancelform [mod:shift,form]\n/stopmacro [mod:shift]\n/cast !Cat Form",
+      "notes": "No Shift: enter Cat Form and stay there. Hold Shift: leave your current form and stop the macro, so it cannot immediately re-enter Cat. This sample does not depend on form-slot numbering.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+    },
+    {
+      "name": "Ghost Wolf",
+      "class": "Shaman",
+      "category": "Forms & stealth",
+      "description": "Enter Ghost Wolf without toggling it off on repeated presses. Cast time and location restrictions still depend on your character and the client.",
+      "body": "#showtooltip Ghost Wolf\n/cast !Ghost Wolf",
+      "notes": "Enter Ghost Wolf without toggling it off on repeated presses. Cast time and location restrictions still depend on your character and the client."
+    },
+    {
+      "name": "Shadowform heal",
+      "class": "Priest",
+      "category": "Forms & stealth",
+      "description": "Cancel Shadowform, then Flash Heal a living friendly mouseover, a living friendly target, or yourself. This does not re-enter Shadowform after healing.",
+      "body": "#showtooltip Flash Heal\n/cancelaura Shadowform\n/cast [@mouseover,help,nodead][help,nodead][@player] Flash Heal",
+      "notes": "Cancel Shadowform, then Flash Heal a living friendly mouseover, a living friendly target, or yourself. This does not re-enter Shadowform after healing."
+    },
+    {
+      "name": "Stealth opener",
+      "class": "Rogue",
+      "category": "Forms & stealth",
+      "description": "While stealthed, attempt Ambush; otherwise use Sinister Strike. Ambush's weapon, position, and energy requirements still apply. Omits /startattack so a failed opener does not start auto-attacking.",
+      "body": "#showtooltip\n/cast [stealth] Ambush; Sinister Strike",
+      "notes": "While stealthed, attempt Ambush; otherwise use Sinister Strike. Ambush's weapon, position, and energy requirements still apply. Omits /startattack so a failed opener does not start auto-attacking."
+    },
+    {
+      "name": "Stealth entry",
+      "class": "Rogue",
+      "category": "Forms & stealth",
+      "description": "Enter Stealth out of combat when not already stealthed. Repeated presses do not cancel Stealth; the ability's cooldown still applies.",
+      "body": "#showtooltip Stealth\n/cast [nocombat,nostealth] !Stealth",
+      "notes": "Enter Stealth out of combat when not already stealthed. Repeated presses do not cancel Stealth; the ability's cooldown still applies."
+    },
+    {
+      "name": "Print location",
+      "class": "Any class",
+      "category": "Utilities",
+      "description": "Print your current map ID using the client API.",
+      "body": "/run print(C_Map.GetBestMapForUnit(\"player\"))",
+      "notes": "Print your current map ID using the client API."
+    },
+    {
+      "name": "Inspect forms",
+      "class": "Any class",
+      "category": "Utilities",
+      "description": "Run in WoW to print each learned stance/form's slot, spell ID, and name; * marks the active form. Use the first number in [form:N] or [stance:N], not the spell ID. Caster/no form is 0.",
+      "body": "/run for i=1,GetNumShapeshiftForms() do local _,a,_,s=GetShapeshiftFormInfo(i); print(i,s,s and C_Spell.GetSpellName(s) or \"?\",a and \"*\" or \"\") end",
+      "notes": "Run in WoW to print each learned stance/form's slot, spell ID, and name; * marks the active form. Use the first number in [form:N] or [stance:N], not the spell ID. Caster/no form is 0."
+    }
+  ],
+  "names": [
+    {
+      "name": "Abolish Disease",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Abolish Poison",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Aimed Shot",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Ambush",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Amplify Magic",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Arcane Explosion",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Arcane Intellect",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Arcane Missiles",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Arcane Power",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Arcane Shot",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Aquatic Form",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Aspect of the Cheetah",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Aspect of the Hawk",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Aspect of the Monkey",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Aspect of the Pack",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Auto Shot",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Banish",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Barkskin",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Battle Shout",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Battle Stance",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Bear Form",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Berserker Rage",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Berserker Stance",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Bestial Wrath",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Bite",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blessing of Freedom",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blessing of Kings",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blessing of Might",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blessing of Protection",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blessing of Sacrifice",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blessing of Salvation",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blessing of Wisdom",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blind",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blink",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Blizzard",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Bloodrage",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Bloodthirst",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Call Pet",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Cat Form",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Chain Heal",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Chain Lightning",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Challenging Roar",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Challenging Shout",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Charge",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Cheap Shot",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Claw",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Cleave",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Concussive Shot",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Cone of Cold",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Consecration",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Consume Shadows",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Corruption",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Counterattack",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Counterspell",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Cower",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Cure Disease",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Cure Poison",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Curse of Agony",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Curse of Exhaustion",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Curse of Recklessness",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Curse of Shadow",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Curse of the Elements",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Curse of Tongues",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Curse of Weakness",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Dampen Magic",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Dash",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Death Coil",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Death Wish",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Defensive Stance",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Demoralizing Roar",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Demoralizing Shout",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Desperate Prayer",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Devour Magic",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Dire Bear Form",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Disarm",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Disengage",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Dismiss Pet",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Dispel Magic",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Divine Favor",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Divine Intervention",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Divine Protection",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Divine Shield",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Drain Life",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Drain Mana",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Drain Soul",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Earth Shock",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Earthbind Totem",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Elemental Mastery",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Enrage",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Enslave Demon",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Entangling Roots",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Escape Artist",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Evasion",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Eviscerate",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Execute",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Exorcism",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Explosive Trap",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Eyes of the Beast",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Fade",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Faerie Fire",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Faerie Fire (Feral)",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Fear",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Fear Ward",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Feed Pet",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Feign Death",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Feint",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Feral Charge",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Fire Blast",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Fire Nova Totem",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Fireball",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Flame Shock",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Flamestrike",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Flash Heal",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Flash of Light",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Freezing Trap",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Frenzied Regeneration",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Frost Armor",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Frost Nova",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Frost Shock",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Frost Trap",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Frostbolt",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Garrote",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Ghost Wolf",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Gouge",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Greater Heal",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Grounding Totem",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Growl",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Hammer of Justice",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Hammer of Wrath",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Hamstring",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Heal",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Healing Touch",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Healing Wave",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Heroic Strike",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Hibernate",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Holy Fire",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Holy Light",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Holy Nova",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Holy Shock",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Holy Wrath",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Howl of Terror",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Hunter's Mark",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Ice Armor",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Ice Barrier",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Ice Block",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Immolate",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Immolation Trap",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Innervate",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Inner Fire",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Inner Focus",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Intercept",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Intimidating Shout",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Intimidation",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Judgement",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Kick",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Kidney Shot",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Lay on Hands",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Lesser Heal",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Lesser Healing Wave",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Levitate",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Life Tap",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Lightning Bolt",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Lightning Shield",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Magma Totem",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mana Burn",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mana Shield",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mana Spring Totem",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mark of the Wild",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Maul",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mend Pet",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mind Blast",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mind Control",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mind Flay",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mind Soothe",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mocking Blow",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Moonfire",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Moonkin Form",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Mortal Strike",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Multi-Shot",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Nature's Grasp",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Nature's Swiftness",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Overpower",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Penance",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Pick Pocket",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Polymorph",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Pounce",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Power Infusion",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Power Word: Fortitude",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Power Word: Shield",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Prayer of Healing",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Presence of Mind",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Prowl",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Psychic Scream",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Pummel",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Purge",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Pyroblast",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Rake",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Rapid Fire",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Ravage",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Rebirth",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Recklessness",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Redemption",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Regrowth",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Rejuvenation",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Remove Curse",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Remove Lesser Curse",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Rend",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Renew",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Resurrection",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Retaliation",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Revenge",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Revive Pet",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Rip",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Riposte",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Rupture",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Sacrifice",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Sap",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Scare Beast",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Scorch",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Seal of Command",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Seal of Righteousness",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Searing Pain",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Searing Totem",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Seduction",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Serpent Sting",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shackle Undead",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shadow Bolt",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shadow Word: Pain",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shadowburn",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shadowform",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shield Bash",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shield Block",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shield Slam",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shield Wall",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Shred",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Silence",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Sinister Strike",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Siphon Life",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Slice and Dice",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Smite",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Soul Fire",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Spell Lock",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Sprint",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Starfire",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Stealth",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Stoneform",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Stormstrike",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Summon Felhunter",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Summon Imp",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Summon Succubus",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Summon Voidwalker",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Sunder Armor",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Sweeping Strikes",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Swiftmend",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Swipe",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Taunt",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Thorns",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Thunder Clap",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Tiger's Fury",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Tranquility",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Tranquilizing Shot",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Travel Form",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Tremor Totem",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Turn Undead",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Vampiric Embrace",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Vanish",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Viper Sting",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "War Stomp",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Whirlwind",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Will of the Forsaken",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Wing Clip",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Wrath",
+      "kind": "spell",
+      "id": 0
+    },
+    {
+      "name": "Healing Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Mana Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Major Healing Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Major Mana Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Lesser Healing Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Lesser Mana Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Swiftness Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Free Action Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Living Action Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Limited Invulnerability Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Restorative Potion",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Heavy Runecloth Bandage",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Runecloth Bandage",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Major Healthstone",
+      "kind": "item",
+      "id": 0
+    },
+    {
+      "name": "Healthstone",
+      "kind": "item",
+      "id": 0
+    }
+  ]
+}

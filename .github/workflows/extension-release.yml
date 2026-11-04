@@ -1,0 +1,41 @@
+name: Publish VS Code extension release
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing extension version tag, such as v0.2.0
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: extension
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.tag }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: extension/package-lock.json
+      - run: npm ci
+      - run: npm run check:data
+      - run: npm run format:check
+      - run: npm test
+      - run: npm run test:host
+      - run: npm run package
+        env:
+          RELEASE_TAG: ${{ inputs.tag }}
+      - name: Publish VSIX and checksum
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.tag }}
+        run: |
+          gh release create $env:RELEASE_TAG ../dist/*.vsix ../dist/spellbook-vsix-SHA256SUMS.txt --verify-tag --title "Spellbook $env:RELEASE_TAG — VS Code extension" --notes-file CHANGELOG.md
+          if ($LASTEXITCODE -ne 0) { throw 'Release publishing failed' }

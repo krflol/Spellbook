@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "WoW Macro", "scopeName": "source.wowmacro",
+  "patterns": [
+    {"begin":"^\\s*(/run|/script)\\b","end":"$","beginCaptures":{"1":{"name":"keyword.control.command.wowmacro"}},"contentName":"meta.embedded.inline.lua","patterns":[{"include":"source.lua"}]},
+    {"begin":"^\\s*(/(?:say|s|yell|y|emote|e|me|party|p|raid|ra|raidwarning|rw|guild|g|officer|o|whisper|w|tell|t|reply|r))\\b","end":"$","beginCaptures":{"1":{"name":"keyword.control.command.wowmacro"}},"contentName":"string.unquoted.chat.wowmacro"},
+    {"match":"^\\s*(#[a-zA-Z]+)","captures":{"1":{"name":"keyword.control.directive.wowmacro"}}},
+    {"match":"^\\s*(/[a-zA-Z0-9_]+)","captures":{"1":{"name":"keyword.control.command.wowmacro"}}},
+    {"begin":"\\[","end":"\\]|$","name":"meta.condition.wowmacro","beginCaptures":{"0":{"name":"punctuation.definition.condition.begin.wowmacro"}},"endCaptures":{"0":{"name":"punctuation.definition.condition.end.wowmacro"}},"patterns":[
+      {"match":"(?:@|target=)[a-zA-Z0-9]+","name":"variable.language.unit.wowmacro"},
+      {"match":"(?i)\\b(?:no)?(?:mod(?:ifier)?|btn|button|stance|form|spec|actionbar|bonusbar|equipped|worn|group|pet|channeling|help|harm|exists|dead|combat|stealth|mounted|swimming|flying|flyable|indoors|outdoors|party|raid|known|talent)\\b","name":"support.function.condition.wowmacro"},
+      {"match":"\\b\\d+\\b","name":"constant.numeric.wowmacro"},
+      {"match":"\\b(?:shift|ctrl|alt|party|raid)\\b","name":"constant.language.wowmacro"},
+      {"match":"[:,/]","name":"punctuation.separator.condition.wowmacro"}
+    ]},
+    {"match":"\\breset=[a-zA-Z0-9/]+","name":"storage.modifier.reset.wowmacro"},
+    {"match":"[!;]","name":"keyword.operator.wowmacro"},
+    {"match":"\\b\\d+\\b","name":"constant.numeric.wowmacro"}
+  ]
+}

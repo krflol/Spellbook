@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.2.0
+
+Spellbook is now available as a VS Code extension. Install the VSIX from GitHub Releases.
+
+- Native macro editing with WoW/Lua highlighting, contextual IntelliSense, hover help, Outline, diagnostics, quick fixes, and character/byte budgets.
+- Local library with autosave, metadata, favorites, Markdown notes, recoverable Trash, and cross-window edit protection.
+- Revision comparisons and restoration through VS Code's native editor.
+- 36 samples and snippets, Atlas/Spellbook library import/export, and custom autocomplete catalogues.
+- Windows and Linux extension checks, real VS Code integration tests, and universal VSIX packaging.
+
+The desktop application and its v0.1.0 download remain available. See [extension documentation](extension/README.md) for installation and migration.
+
 ## 0.1.0
 
 First standalone Windows release, extracted from the Forever Atlas macro workshop.

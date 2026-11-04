@@ -2,54 +2,57 @@
 
 # Spellbook
 
-A native, offline IDE for World of Warcraft macros. Write with syntax highlighting and autocomplete, keep a personal library, and start from practical stance, shapeshift, and targeting samples.
+A World of Warcraft macro IDE inside **VS Code**. Write macros with highlighting, IntelliSense, inline Lua, and live diagnostics. Keep a personal library and start from 36 guided samples for stance dancing, shapeshifting, form-sensitive actions, and targeting.
 
-**[Download for Windows](https://github.com/krflol/Spellbook/releases/latest)** · [User guide](docs/GUIDE.md) · [Autocomplete catalogues](docs/CATALOGUES.md) · [Report an issue](https://github.com/krflol/Spellbook/issues)
-
-![Spellbook's native macro editor](docs/screenshots/editor.png)
+**[Download the VS Code extension](https://github.com/krflol/Spellbook/releases/tag/v0.2.0)** · [Extension guide](extension/README.md) · [Language reference](extension/docs/REFERENCE.md) · [Report an issue](https://github.com/krflol/Spellbook/issues)
 
 ## Get started
 
-Download `Spellbook-0.1.0-windows-x64.zip` from Releases, extract it, and open `spellbook.exe`. No installer, account, Atlas database, or game installation is needed. The Windows release is unsigned.
+1. Download `spellbook-0.2.0.vsix` from Releases.
+2. In VS Code, run **Extensions: Install from VSIX…** and select it.
+3. Click the Spellbook book icon in the Activity Bar, or run **Spellbook: New Macro from Sample**.
+4. Edit, then **Copy Macro for WoW** and paste into the game's macro editor.
 
-Create a macro or pick a sample, edit it, then use **Copy macro** and paste into WoW's macro editor. Spellbook saves drafts locally; it does not execute macros or modify the game.
+VS Code 1.96+ on desktop is required. The extension is distributed as a universal VSIX through GitHub Releases; it is not currently on the Marketplace.
 
-## In the editor
+## Features
 
-- WoW command, conditional, target, and inline Lua syntax highlighting.
-- Contextual completion for commands, conditions, APIs, and bundled spell/item names. Import custom catalogues for your client or locale.
-- Multiple tabs, line numbers, bracket matching and pairing, hover reference, undo/redo, find/replace, go to line, and duplicate line.
-- Live structural problems, clickable diagnostics, and separate character/UTF-8 byte budgets.
-- Searchable macro library with favorites, class/character labels, tags, notes, recoverable trash, and revision history.
-- Autosave with concurrent-edit protection, restored tabs/cursors/editor settings, and native import/export dialogs. Drop text or JSON files onto the window to import.
-- 36 searchable samples: stance dancing, Bear/Cat switching, travel forms, Prowl, powershifting, caster healing, form-sensitive attacks, stealth, mouseovers, focus, modifiers, and utilities.
+- Native VS Code tabs, split editors, themes, keyboard shortcuts, multi-cursor editing, find/replace, undo/redo, and Outline.
+- WoW command, condition, target, and inline Lua highlighting; contextual completion, hover reference, quick fixes, and Problems.
+- Character and UTF-8 byte budgets that preserve oversized drafts.
+- Local macro library with autosave, search, class filters, favorites, character labels, tags, Markdown notes, and recoverable Trash.
+- The last 100 content revisions per macro, native comparisons, and revision restoration.
+- 36 samples and snippets, including stance dancing, Bear/Cat switching, travel forms, Prowl, powershifting, caster healing, form-sensitive attacks, mouseovers, and focus.
+- `.wowmacro` / `.macro` files, Atlas and Spellbook desktop library imports, JSON/text exports, and custom autocomplete catalogues.
 
-![Autocomplete in the native editor](docs/screenshots/autocomplete.png)
+The extension makes no network requests, collects no telemetry, and does not execute macros or modify the game. The samples and bundled English vocabulary focus on **WoW Forever / Classic-style mechanics**. Verify spell availability and form slots on your character; samples have not been tested in a live game session. Diagnostics check structure rather than simulating gameplay or compiling Lua.
 
-The samples and bundled English vocabulary focus on **WoW Forever / Classic-style mechanics**. Learned form slots and spell availability vary; the **Inspect forms** sample helps you verify your character's slots. Structural checks are not a Lua compiler or gameplay simulator, and these samples have not been validated in a live game session.
+## Migrate from desktop or Atlas
 
-## Local data and portability
+Export your library as JSON from the desktop app or Forever Atlas, then run **Spellbook: Import Macros / Atlas Library** in VS Code. Macro text and metadata are preserved. Desktop databases remain separate; history is not included in portable library exports.
 
-On Windows, data lives in `%LOCALAPPDATA%\Spellbook`. Use `spellbook.exe --portable` to keep a `data` folder beside the executable, or `--data-dir PATH` to choose a location. Libraries exported from Forever Atlas can be imported directly. Spellbook library exports are also supported by the updated Atlas macro tab.
+The [original desktop app](docs/DESKTOP.md) and its [v0.1.0 Windows release](https://github.com/krflol/Spellbook/releases/tag/v0.1.0) remain available.
 
-No telemetry, automatic updates, or remote requests. Documentation links open in your browser only when clicked.
+## Develop the extension
 
-## Build and contribute
-
-Install Rust 1.95 or newer and the platform's native compiler tools. Windows builds require the Visual Studio C++ build tools and Windows SDK.
+Use Node.js 22 or newer:
 
 ```sh
-cargo run --locked
-cargo test --locked --all-targets
-cargo clippy --locked --all-targets -- -D warnings
-cargo fmt --all -- --check
-cargo build --locked --release
+cd extension
+npm ci
+npm run check:data
+npm run format:check
+npm test
+npm run test:host
+npm run package
 ```
 
-On Windows, `powershell -File scripts/package.ps1` builds a versioned zip and SHA-256 checksums in `dist/`. Windows x64 is the tested release platform; macOS/Linux source builds are not validated in this release.
+On a headless Linux machine, run `xvfb-run -a npm run test:host`. The test runner creates isolated VS Code profiles, leaving your usual extensions, settings, and library untouched. Set `SPELLBOOK_VSCODE_EXECUTABLE` to an existing VS Code executable to avoid downloading a test host.
 
-The app uses Rust, egui/eframe, and SQLite. It originated in Forever Atlas and now runs independently. See [architecture](docs/ARCHITECTURE.md), [visual design](docs/design/README.md), and [release notes](CHANGELOG.md).
+The generated VSIX and checksums are written to `dist/`. To debug, open this repository in VS Code and use **Run Spellbook Extension** from Run and Debug (F5).
+
+The extension uses TypeScript and native VS Code language, tree, file system, and diff APIs. It has no runtime package dependencies. Shared sample/reference data is generated from `src/macros/` and `assets/names.txt`; run `npm run generate` after editing those sources. See [release notes](CHANGELOG.md).
 
 ## License
 
-MIT; see [LICENSE](LICENSE) and [third-party notices](THIRD_PARTY_NOTICES.txt). Spellbook is independent community software, not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft is a Blizzard trademark. No Blizzard artwork or client database is included.
+MIT; see [LICENSE](LICENSE). Independent community software, not affiliated with or endorsed by Blizzard Entertainment. World of Warcraft is a Blizzard trademark. No Blizzard artwork or client database is included. Desktop dependencies are listed in [third-party notices](THIRD_PARTY_NOTICES.txt).

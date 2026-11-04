@@ -1,0 +1,479 @@
+{
+  "name": "spellbook",
+  "displayName": "Spellbook — WoW Macro IDE",
+  "description": "World of Warcraft macro highlighting, IntelliSense, diagnostics, a local library, and stance/shapeshifting samples.",
+  "version": "0.2.0",
+  "publisher": "krflol",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krflol/Spellbook.git",
+    "directory": "extension"
+  },
+  "homepage": "https://github.com/krflol/Spellbook",
+  "bugs": {
+    "url": "https://github.com/krflol/Spellbook/issues"
+  },
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Snippets",
+    "Other"
+  ],
+  "keywords": [
+    "wow",
+    "warcraft",
+    "macro",
+    "forever",
+    "classic",
+    "lua"
+  ],
+  "icon": "media/spellbook.png",
+  "galleryBanner": {
+    "color": "#11161C",
+    "theme": "dark"
+  },
+  "main": "./out/extension.js",
+  "extensionKind": [
+    "ui"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": {
+      "supported": true
+    }
+  },
+  "activationEvents": [
+    "onFileSystem:spellbook",
+    "onFileSystem:spellbook-revision",
+    "onFileSystem:spellbook-sample"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "wowmacro",
+        "aliases": [
+          "WoW Macro",
+          "wowmacro"
+        ],
+        "extensions": [
+          ".wowmacro",
+          ".macro"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./media/book.svg",
+          "dark": "./media/book.svg"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wowmacro",
+        "scopeName": "source.wowmacro",
+        "path": "./syntaxes/wowmacro.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.inline.lua": "lua"
+        }
+      }
+    ],
+    "snippets": [
+      {
+        "language": "wowmacro",
+        "path": "./snippets/wowmacro.json"
+      }
+    ],
+    "configurationDefaults": {
+      "[wowmacro]": {
+        "editor.wordWrap": "on",
+        "editor.quickSuggestions": {
+          "other": "on",
+          "comments": "off",
+          "strings": "off"
+        }
+      }
+    },
+    "configuration": {
+      "title": "Spellbook",
+      "properties": {
+        "spellbook.characterLimit": {
+          "type": "number",
+          "default": 255,
+          "minimum": 1,
+          "maximum": 65536,
+          "description": "Macro body budget used by diagnostics and the status bar. Change only for clients/addons with a different limit."
+        },
+        "spellbook.diagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show structural macro diagnostics in Problems."
+        },
+        "spellbook.autoSaveLibrary": {
+          "type": "boolean",
+          "default": true,
+          "description": "Save Spellbook library documents after a one-second typing pause. Regular files follow VS Code's own Auto Save setting."
+        },
+        "spellbook.cataloguePath": {
+          "type": "string",
+          "default": "",
+          "scope": "machine",
+          "description": "Optional absolute path to a Spellbook autocomplete catalogue JSON file. Imported catalogues are stored locally when this is empty."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "spellbook.newMacro",
+        "title": "New Macro",
+        "category": "Spellbook",
+        "icon": "$(add)"
+      },
+      {
+        "command": "spellbook.createFromSample",
+        "title": "New Macro from Sample",
+        "category": "Spellbook",
+        "icon": "$(file-code)"
+      },
+      {
+        "command": "spellbook.previewSample",
+        "title": "Preview Sample",
+        "category": "Spellbook"
+      },
+      {
+        "command": "spellbook.insertSample",
+        "title": "Insert Sample",
+        "category": "Spellbook"
+      },
+      {
+        "command": "spellbook.openMacro",
+        "title": "Open Macro",
+        "category": "Spellbook"
+      },
+      {
+        "command": "spellbook.searchLibrary",
+        "title": "Search Macro Library",
+        "category": "Spellbook",
+        "icon": "$(search)"
+      },
+      {
+        "command": "spellbook.filterLibrary",
+        "title": "Filter Library by Class",
+        "category": "Spellbook",
+        "icon": "$(filter)"
+      },
+      {
+        "command": "spellbook.filterSamples",
+        "title": "Filter Samples by Class",
+        "category": "Spellbook",
+        "icon": "$(filter)"
+      },
+      {
+        "command": "spellbook.copyMacro",
+        "title": "Copy Macro for WoW",
+        "category": "Spellbook",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "spellbook.addToLibrary",
+        "title": "Save Current Macro to Library",
+        "category": "Spellbook",
+        "icon": "$(save)"
+      },
+      {
+        "command": "spellbook.importLibrary",
+        "title": "Import Macros / Atlas Library",
+        "category": "Spellbook",
+        "icon": "$(folder-opened)"
+      },
+      {
+        "command": "spellbook.exportLibrary",
+        "title": "Export Macro Library",
+        "category": "Spellbook",
+        "icon": "$(export)"
+      },
+      {
+        "command": "spellbook.exportMacro",
+        "title": "Export Macro as File",
+        "category": "Spellbook"
+      },
+      {
+        "command": "spellbook.editDetails",
+        "title": "Edit Macro Details",
+        "category": "Spellbook",
+        "icon": "$(edit)"
+      },
+      {
+        "command": "spellbook.toggleFavorite",
+        "title": "Toggle Favorite",
+        "category": "Spellbook",
+        "icon": "$(star-empty)"
+      },
+      {
+        "command": "spellbook.duplicateMacro",
+        "title": "Duplicate Macro",
+        "category": "Spellbook",
+        "icon": "$(files)"
+      },
+      {
+        "command": "spellbook.archiveMacro",
+        "title": "Move Macro to Trash",
+        "category": "Spellbook",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "spellbook.restoreMacro",
+        "title": "Restore Macro from Trash",
+        "category": "Spellbook",
+        "icon": "$(discard)"
+      },
+      {
+        "command": "spellbook.showHistory",
+        "title": "Show Revision History",
+        "category": "Spellbook",
+        "icon": "$(history)"
+      },
+      {
+        "command": "spellbook.compareRevision",
+        "title": "Compare Revision with Current",
+        "category": "Spellbook",
+        "icon": "$(diff)"
+      },
+      {
+        "command": "spellbook.restoreRevision",
+        "title": "Restore This Revision",
+        "category": "Spellbook",
+        "icon": "$(history)"
+      },
+      {
+        "command": "spellbook.reference",
+        "title": "Open Macro Language Reference",
+        "category": "Spellbook",
+        "icon": "$(book)"
+      },
+      {
+        "command": "spellbook.importCatalogue",
+        "title": "Import Autocomplete Catalogue",
+        "category": "Spellbook"
+      },
+      {
+        "command": "spellbook.resetCatalogue",
+        "title": "Reset Autocomplete Catalogue",
+        "category": "Spellbook"
+      },
+      {
+        "command": "spellbook.refresh",
+        "title": "Refresh Library",
+        "category": "Spellbook",
+        "icon": "$(refresh)"
+      }
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "spellbook",
+          "title": "Spellbook",
+          "icon": "media/book.svg"
+        }
+      ]
+    },
+    "views": {
+      "spellbook": [
+        {
+          "id": "spellbook.library",
+          "name": "Macro Library"
+        },
+        {
+          "id": "spellbook.samples",
+          "name": "Samples"
+        },
+        {
+          "id": "spellbook.history",
+          "name": "Revision History",
+          "visibility": "collapsed"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "spellbook.library",
+        "contents": "Your WoW macros, inside VS Code.\n[New macro](command:spellbook.newMacro)\n[Start from a sample](command:spellbook.createFromSample)\n[Import a library](command:spellbook.importLibrary)"
+      },
+      {
+        "view": "spellbook.history",
+        "contents": "Open a library macro to see its saved revisions.\nRestoring creates a new revision."
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "spellbook.compareRevision",
+          "when": "false"
+        },
+        {
+          "command": "spellbook.restoreRevision",
+          "when": "false"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "spellbook.newMacro",
+          "when": "view == spellbook.library",
+          "group": "navigation@1"
+        },
+        {
+          "command": "spellbook.searchLibrary",
+          "when": "view == spellbook.library",
+          "group": "navigation@2"
+        },
+        {
+          "command": "spellbook.filterLibrary",
+          "when": "view == spellbook.library",
+          "group": "navigation@3"
+        },
+        {
+          "command": "spellbook.refresh",
+          "when": "view == spellbook.library",
+          "group": "navigation@4"
+        },
+        {
+          "command": "spellbook.importLibrary",
+          "when": "view == spellbook.library",
+          "group": "transfer@1"
+        },
+        {
+          "command": "spellbook.exportLibrary",
+          "when": "view == spellbook.library",
+          "group": "transfer@2"
+        },
+        {
+          "command": "spellbook.filterSamples",
+          "when": "view == spellbook.samples",
+          "group": "navigation@1"
+        },
+        {
+          "command": "spellbook.createFromSample",
+          "when": "view == spellbook.samples",
+          "group": "navigation@2"
+        },
+        {
+          "command": "spellbook.reference",
+          "when": "view == spellbook.samples",
+          "group": "reference"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "spellbook.copyMacro",
+          "when": "view == spellbook.library && viewItem == macro",
+          "group": "inline@1"
+        },
+        {
+          "command": "spellbook.toggleFavorite",
+          "when": "view == spellbook.library && viewItem == macro",
+          "group": "organize@1"
+        },
+        {
+          "command": "spellbook.editDetails",
+          "when": "view == spellbook.library && viewItem == macro",
+          "group": "organize@2"
+        },
+        {
+          "command": "spellbook.duplicateMacro",
+          "when": "view == spellbook.library && viewItem == macro",
+          "group": "organize@3"
+        },
+        {
+          "command": "spellbook.exportMacro",
+          "when": "view == spellbook.library && viewItem == macro",
+          "group": "transfer"
+        },
+        {
+          "command": "spellbook.showHistory",
+          "when": "view == spellbook.library && viewItem == macro",
+          "group": "history"
+        },
+        {
+          "command": "spellbook.archiveMacro",
+          "when": "view == spellbook.library && viewItem == macro",
+          "group": "trash"
+        },
+        {
+          "command": "spellbook.restoreMacro",
+          "when": "view == spellbook.library && viewItem == archived",
+          "group": "inline"
+        },
+        {
+          "command": "spellbook.createFromSample",
+          "when": "view == spellbook.samples && viewItem == sample",
+          "group": "inline"
+        },
+        {
+          "command": "spellbook.insertSample",
+          "when": "view == spellbook.samples && viewItem == sample",
+          "group": "sample"
+        },
+        {
+          "command": "spellbook.restoreRevision",
+          "when": "view == spellbook.history && viewItem == revision",
+          "group": "inline"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "spellbook.copyMacro",
+          "when": "editorLangId == wowmacro",
+          "group": "navigation@1"
+        },
+        {
+          "command": "spellbook.createFromSample",
+          "when": "editorLangId == wowmacro",
+          "group": "spellbook@1"
+        },
+        {
+          "command": "spellbook.addToLibrary",
+          "when": "editorLangId == wowmacro && resourceScheme != spellbook",
+          "group": "spellbook@2"
+        },
+        {
+          "command": "spellbook.showHistory",
+          "when": "resourceScheme == spellbook",
+          "group": "spellbook@3"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "spellbook.copyMacro",
+        "key": "ctrl+alt+c",
+        "mac": "cmd+alt+c",
+        "when": "editorTextFocus && editorLangId == wowmacro"
+      }
+    ]
+  },
+  "scripts": {
+    "generate": "node scripts/generate-data.cjs",
+    "check:data": "node scripts/generate-data.cjs --check",
+    "compile": "tsc -p .",
+    "check": "tsc -p . --noEmit",
+    "format": "prettier --write \"src/**/*.ts\" \"scripts/*.cjs\" package.json tsconfig.json",
+    "format:check": "prettier --check \"src/**/*.ts\" \"scripts/*.cjs\" package.json tsconfig.json",
+    "test": "npm run compile && node --test out/test/core.test.js",
+    "test:host": "npm run compile && node scripts/test-host.cjs",
+    "vscode:prepublish": "npm run compile",
+    "package": "node scripts/package.cjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/vscode": "1.96.0",
+    "@vscode/test-electron": "3.1.0",
+    "@vscode/vsce": "4.1.0",
+    "prettier": "3.6.2",
+    "typescript": "~5.9.3",
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.3.0"
+  }
+}

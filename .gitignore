@@ -7,3 +7,8 @@
 *.log
 /docs/screenshots/*.error.txt
 .capture-data/
+/extension/node_modules/
+/extension/out/
+/extension/.test-host/
+/extension/.vscode-test/
+*.vsix

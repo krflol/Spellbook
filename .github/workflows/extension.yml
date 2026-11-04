@@ -1,0 +1,56 @@
+name: VS Code extension
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'extension/**'
+      - 'src/macros/language.rs'
+      - 'src/macros/snippets.rs'
+      - 'assets/**'
+      - '.github/workflows/extension.yml'
+  pull_request:
+    paths:
+      - 'extension/**'
+      - 'src/macros/language.rs'
+      - 'src/macros/snippets.rs'
+      - 'assets/**'
+      - '.github/workflows/extension.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: extension
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: extension/package-lock.json
+      - run: npm ci
+      - run: npm run check:data
+      - run: npm run format:check
+      - run: npm test
+      - name: VS Code integration tests (Windows)
+        if: runner.os == 'Windows'
+        run: npm run test:host
+      - name: VS Code integration tests (Linux)
+        if: runner.os == 'Linux'
+        run: xvfb-run -a npm run test:host
+      - run: npm run package
+      - uses: actions/upload-artifact@v4
+        if: runner.os == 'Windows'
+        with:
+          name: Spellbook-VSIX
+          path: |
+            dist/*.vsix
+            dist/spellbook-vsix-SHA256SUMS.txt
+          if-no-files-found: error

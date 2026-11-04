@@ -1,0 +1,293 @@
+{
+  "Mouseover heal": {
+    "prefix": "sb-mouseover-heal",
+    "body": [
+      "#showtooltip",
+      "/cast [@mouseover,help,nodead][] Flash Heal"
+    ],
+    "description": "Try a living friendly mouseover, then the default target. Replace the spell for your class."
+  },
+  "Focus interrupt": {
+    "prefix": "sb-focus-interrupt",
+    "body": [
+      "#showtooltip Counterspell",
+      "/stopcasting",
+      "/cast [@focus,harm,nodead][] Counterspell"
+    ],
+    "description": "Interrupt a living hostile focus, with your current target as fallback."
+  },
+  "Modifier cast": {
+    "prefix": "sb-modifier-cast",
+    "body": [
+      "#showtooltip",
+      "/cast [mod:shift] Frostbolt; Fireball"
+    ],
+    "description": "Hold Shift for Frostbolt; otherwise cast Fireball."
+  },
+  "Mouseover debuff": {
+    "prefix": "sb-mouseover-debuff",
+    "body": [
+      "#showtooltip",
+      "/cast [@mouseover,harm,nodead][] Polymorph"
+    ],
+    "description": "Use a living hostile mouseover, then your default target."
+  },
+  "Self cast": {
+    "prefix": "sb-self-cast",
+    "body": [
+      "#showtooltip",
+      "/cast [@player] Power Word: Shield"
+    ],
+    "description": "Cast directly on yourself."
+  },
+  "Ground target": {
+    "prefix": "sb-ground-target",
+    "body": [
+      "#showtooltip",
+      "/cast [@cursor] Blizzard"
+    ],
+    "description": "Place a supported ground-targeted spell at the cursor."
+  },
+  "Target sequence": {
+    "prefix": "sb-target-sequence",
+    "body": [
+      "#showtooltip",
+      "/castsequence reset=target/10 Corruption, Curse of Agony"
+    ],
+    "description": "Advance on each successful press; reset on target change or after the idle interval."
+  },
+  "Trinkets": {
+    "prefix": "sb-trinkets",
+    "body": [
+      "#showtooltip",
+      "/use 13",
+      "/use 14"
+    ],
+    "description": "Attempt to activate both equipped trinkets; shared cooldowns still apply."
+  },
+  "Pet attack": {
+    "prefix": "sb-pet-attack",
+    "body": [
+      "/petattack [@target,harm,nodead]"
+    ],
+    "description": "Send your pet to your living hostile target."
+  },
+  "Mouseover focus": {
+    "prefix": "sb-mouseover-focus",
+    "body": [
+      "/focus [@mouseover,exists][]"
+    ],
+    "description": "Set focus from mouseover, falling back to the current target."
+  },
+  "Stance selector": {
+    "prefix": "sb-stance-selector",
+    "body": [
+      "#showtooltip",
+      "/cast [mod:ctrl] Berserker Stance; [mod:shift] Defensive Stance; Battle Stance"
+    ],
+    "description": "No modifier: Battle Stance. Shift: Defensive Stance. Ctrl: Berserker Stance. Ctrl takes priority if both keys are held. Put the macro on a key available in every stance.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Charge dance": {
+    "prefix": "sb-charge-dance",
+    "body": [
+      "#showtooltip Charge",
+      "/cast [nostance:1] Battle Stance; Charge"
+    ],
+    "description": "If needed, the first press selects Battle Stance; a later press attempts Charge. This does not bypass Charge's range, combat, or cooldown requirements.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Overpower dance": {
+    "prefix": "sb-overpower-dance",
+    "body": [
+      "#showtooltip Overpower",
+      "/cast [nostance:1] Battle Stance; Overpower"
+    ],
+    "description": "Select Battle Stance when needed, then press again for Overpower. The macro does not check whether Overpower is available or whether you have enough rage.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Taunt dance": {
+    "prefix": "sb-taunt-dance",
+    "body": [
+      "#showtooltip Taunt",
+      "/cast [nostance:2] Defensive Stance; [@mouseover,harm,nodead][] Taunt"
+    ],
+    "description": "Select Defensive Stance when needed. Once there, taunt a living hostile mouseover or your current target. A stance change and the taunt use separate presses.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Pummel dance": {
+    "prefix": "sb-pummel-dance",
+    "body": [
+      "#showtooltip Pummel",
+      "/cast [nostance:3] Berserker Stance; [@focus,harm,nodead][] Pummel"
+    ],
+    "description": "Select Berserker Stance when needed, then press again to Pummel a living hostile focus or your current target. Requires Pummel and enough rage.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Charge/Intercept": {
+    "prefix": "sb-charge-intercept",
+    "body": [
+      "#showtooltip [combat] Intercept; Charge",
+      "/cast [nocombat,nostance:1] Battle Stance; [combat,nostance:3] Berserker Stance; [nocombat] Charge; Intercept"
+    ],
+    "description": "Out of combat, choose Battle Stance then Charge. In combat, choose Berserker Stance then Intercept. Each press chooses one action; it does not pick based on range or cooldown. Requires both abilities.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Berserker Rage": {
+    "prefix": "sb-berserker-rage",
+    "body": [
+      "#showtooltip Berserker Rage",
+      "/cast [nostance:3] Berserker Stance; Berserker Rage"
+    ],
+    "description": "Select Berserker Stance when needed; press again for Berserker Rage. Remains in Berserker Stance afterward, so returning to another stance is your choice.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Stance interrupt": {
+    "prefix": "sb-stance-interrupt",
+    "body": [
+      "#showtooltip",
+      "/cast [stance:3] Pummel; [stance:1/2,equipped:Shields] Shield Bash"
+    ],
+    "description": "Use Pummel in Berserker Stance, or Shield Bash in Battle/Defensive with a shield equipped. This sample preserves your stance and does not equip a shield for you.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Stance cooldown": {
+    "prefix": "sb-stance-cooldown",
+    "body": [
+      "#showtooltip",
+      "/cast [stance:1] Retaliation; [stance:2] Shield Wall; [stance:3] Recklessness"
+    ],
+    "description": "Use Retaliation in Battle, Shield Wall in Defensive, or Recklessness in Berserker. Preserves your stance; you must know the selected ability and meet its equipment/cooldown requirements.\n\nNumbered examples use Battle=1, Defensive=2, Berserker=3. Confirm your slots with Inspect forms. A /cast branch chooses one action per keypress; stance changes can cost rage and still respect cooldowns."
+  },
+  "Cat form": {
+    "prefix": "sb-cat-form",
+    "body": [
+      "#showtooltip Cat Form",
+      "/cast !Cat Form"
+    ],
+    "description": "Enter Cat Form without toggling it off on repeated presses. The ! prefix prevents toggling off; it does not perform a powershift.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Bear form": {
+    "prefix": "sb-bear-form",
+    "body": [
+      "#showtooltip Bear Form",
+      "/cast !Bear Form"
+    ],
+    "description": "Enter Bear Form without toggling it off on repeated presses. Replace Bear Form with Dire Bear Form in both lines if that is the version you use.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Travel forms": {
+    "prefix": "sb-travel-forms",
+    "body": [
+      "#showtooltip",
+      "/cast [swimming] !Aquatic Form; [outdoors] !Travel Form; !Cat Form"
+    ],
+    "description": "Swimming selects Aquatic Form before the outdoor check; otherwise outdoors selects Travel Form and indoors selects Cat Form. Learn each selected form first. The ! prefix prevents toggling it off.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Bear/Cat switch": {
+    "prefix": "sb-bear-cat-switch",
+    "body": [
+      "#showtooltip",
+      "/cast [form:1] !Cat Form; !Bear Form"
+    ],
+    "description": "From Bear (slot 1), select Cat; from other states, select Bear. Replace Bear Form with Dire Bear Form if appropriate. Check the Bear slot with Inspect forms.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Cat Prowl": {
+    "prefix": "sb-cat-prowl",
+    "body": [
+      "#showtooltip Prowl",
+      "/cast [noform:3] !Cat Form; [nocombat,nostealth] !Prowl"
+    ],
+    "description": "Select Cat Form if needed, then press again to Prowl while out of combat and not already stealthed. Repeated presses keep Prowl active. Assumes Cat is slot 3.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Cat Dash": {
+    "prefix": "sb-cat-dash",
+    "body": [
+      "#showtooltip Dash",
+      "/cast [noform:3] !Cat Form; Dash"
+    ],
+    "description": "Select Cat Form if needed; a later press attempts Dash. Assumes Cat is slot 3. Shifting and Dash still respect their own costs and cooldowns.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Cat powershift": {
+    "prefix": "sb-cat-powershift",
+    "body": [
+      "#showtooltip Cat Form",
+      "/cancelform [form]",
+      "/cast Cat Form"
+    ],
+    "description": "Deliberately leave your current form, then attempt Cat Form. A cooldown or insufficient mana can leave you in caster form; this macro cannot test those conditions before canceling. It always returns to Cat, not the previous form.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Caster heal": {
+    "prefix": "sb-caster-heal",
+    "body": [
+      "#showtooltip Rejuvenation",
+      "/cancelform [form]",
+      "/cast [@mouseover,help,nodead][help,nodead][@player] Rejuvenation"
+    ],
+    "description": "Leave form, then cast Rejuvenation on a living friendly mouseover, a living friendly target, or yourself. Stays in caster form afterward. The heal still needs mana and an available global cooldown.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Form attack": {
+    "prefix": "sb-form-attack",
+    "body": [
+      "#showtooltip",
+      "/cast [form:1] Maul; [form:3] Claw; [noform] Wrath"
+    ],
+    "description": "Bear (slot 1): Maul. Cat (slot 3): Claw. Caster (no form): Wrath. Other forms do nothing. Maul queues a melee swing; the macro does not change your form or choose a rotation.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Moonkin form": {
+    "prefix": "sb-moonkin-form",
+    "body": [
+      "#showtooltip Moonkin Form",
+      "/cast !Moonkin Form"
+    ],
+    "description": "Enter Moonkin Form without toggling it off on repeated presses. Requires the talent/form to be learned; no numbered form slot is needed.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Cat/caster key": {
+    "prefix": "sb-cat-caster-key",
+    "body": [
+      "#showtooltip Cat Form",
+      "/cancelform [mod:shift,form]",
+      "/stopmacro [mod:shift]",
+      "/cast !Cat Form"
+    ],
+    "description": "No Shift: enter Cat Form and stay there. Hold Shift: leave your current form and stop the macro, so it cannot immediately re-enter Cat. This sample does not depend on form-slot numbering.\n\nNumbered examples assume Bear=1 and Cat=3. Learned forms can change these slots: run Inspect forms in game and adjust [form:N] / [noform:N]. Shifting still needs mana and respects cooldowns."
+  },
+  "Ghost Wolf": {
+    "prefix": "sb-ghost-wolf",
+    "body": [
+      "#showtooltip Ghost Wolf",
+      "/cast !Ghost Wolf"
+    ],
+    "description": "Enter Ghost Wolf without toggling it off on repeated presses. Cast time and location restrictions still depend on your character and the client."
+  },
+  "Shadowform heal": {
+    "prefix": "sb-shadowform-heal",
+    "body": [
+      "#showtooltip Flash Heal",
+      "/cancelaura Shadowform",
+      "/cast [@mouseover,help,nodead][help,nodead][@player] Flash Heal"
+    ],
+    "description": "Cancel Shadowform, then Flash Heal a living friendly mouseover, a living friendly target, or yourself. This does not re-enter Shadowform after healing."
+  },
+  "Stealth opener": {
+    "prefix": "sb-stealth-opener",
+    "body": [
+      "#showtooltip",
+      "/cast [stealth] Ambush; Sinister Strike"
+    ],
+    "description": "While stealthed, attempt Ambush; otherwise use Sinister Strike. Ambush's weapon, position, and energy requirements still apply. Omits /startattack so a failed opener does not start auto-attacking."
+  },
+  "Stealth entry": {
+    "prefix": "sb-stealth-entry",
+    "body": [
+      "#showtooltip Stealth",
+      "/cast [nocombat,nostealth] !Stealth"
+    ],
+    "description": "Enter Stealth out of combat when not already stealthed. Repeated presses do not cancel Stealth; the ability's cooldown still applies."
+  },
+  "Print location": {
+    "prefix": "sb-print-location",
+    "body": [
+      "/run print(C_Map.GetBestMapForUnit(\"player\"))"
+    ],
+    "description": "Print your current map ID using the client API."
+  },
+  "Inspect forms": {
+    "prefix": "sb-inspect-forms",
+    "body": [
+      "/run for i=1,GetNumShapeshiftForms() do local _,a,_,s=GetShapeshiftFormInfo(i); print(i,s,s and C_Spell.GetSpellName(s) or \"?\",a and \"*\" or \"\") end"
+    ],
+    "description": "Run in WoW to print each learned stance/form's slot, spell ID, and name; * marks the active form. Use the first number in [form:N] or [stance:N], not the spell ID. Caster/no form is 0."
+  }
+}
